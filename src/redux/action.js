@@ -19,11 +19,30 @@ export function startAddingTask(task){
 	};
 };
 
+//load tasks from backend API
+export function startLoadingTasks(){
+
+	return async (dispatch) =>{
+		const response = await fetch(baseUrl)
+								.then((response) => response.json())
+								.then((responseJSON) => {return responseJSON});
+		return dispatch(loadTasks(response));
+	};
+};
 
 //adding task
 export function addTask(task){
 	return{
 		type: 'ADD_TASK',
 		task
+	}
+}
+//load the tasks data recevied from backend API in startLoadingTasks() to the app view
+export function loadTasks(tasks){
+	// console.log(tasks);
+	// just tasks means tasks:tasks(its ecma 6 script shortcut)
+	return {
+		type: 'LOAD_TASKS',
+		tasks
 	}
 }

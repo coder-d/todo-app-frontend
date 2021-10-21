@@ -16,6 +16,18 @@ class Main extends Component {
         console.log('constructor')
     }
 
+    //in-built method called after render()
+    componentDidMount() {
+        
+        this.props.startLoadingTasks()
+        console.log('Debanjan componentDidMount');
+        // console.log(this.props)
+
+    }
+    componentDidUpdate(prevProps, prevState){
+        
+    }
+
    
     render(){
         console.log('main render Debanjan');
