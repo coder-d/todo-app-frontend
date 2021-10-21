@@ -6,6 +6,9 @@ import {withRouter} from 'react-router';
 
 	function mapStateToProps(state){
 		console.log('inside mapStateToProps');	
+		return {
+		tasks : state.tasks,
+	}
 }
 
 function mapDispatchToProps(dispatch){

@@ -26,6 +26,19 @@ class Main extends Component {
                  <h1>
                     <Link to="/"> TaskList </Link>
                 </h1>
+                <h2>
+                    <Link to="/addTask"> Add Task </Link>
+                </h2>
+                <Route exact path="/" render= {()=>(
+                        <div>
+                            <TaskList tasks = {this.props.tasks} {...this.props}/>
+                        </div>
+                )}/>
+                // history is part of params, alternately we could have written (params.history)
+                    <Route path="/addTask" render= {({history})=>(
+                        <AddTask {...this.props}/>
+                    )}/>
+
             </div>
         )
     }

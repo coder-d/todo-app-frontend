@@ -7,8 +7,9 @@ function tasks(state = _tasks,action){
 	//action.type is defined in /redux/action.js
 	switch(action.type){
 		
+		//ES6 Spread syntax (...) is used to break up each elements in the state into individual elements
+		case 'ADD_TASK' :return [...state,action.task]
 		case 'UPDATE_TASK' :
-			
 		case 'LOAD_TASKS': 
 		default : return state
 	}
