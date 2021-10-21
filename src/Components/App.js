@@ -10,7 +10,9 @@ import {withRouter} from 'react-router';
 		tasks : state.tasks,
 	}
 }
-
+//mapDispatchToProps is used as a shortcut, which lets us call redux action method
+//directly like this.props.removeTask(1) instead of this.props.dispatch(removeTask(1))
+//in this case actions is imported as wildcart so it has all the functions of /redux/action.js
 function mapDispatchToProps(dispatch){
 	return bindActionCreators(actions,dispatch);
 }
